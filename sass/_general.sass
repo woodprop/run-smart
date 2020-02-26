@@ -1,4 +1,111 @@
+$color-red: #c70101
+
 *
   margin: 0
   padding: 0
-  background: green
+
+html
+  font-family: "Museo Sans Cyrl", sans-serif
+
+.container
+  position: relative
+  width: 950px
+  margin: 0 auto
+
+.promo
+  min-height: 650px
+  padding: 21px 0 90px 0
+  background: url("../images/promo_bg.png") center (center/cover) no-repeat
+  color: #ffffff
+
+  .header
+    display: flex
+    justify-content: space-between
+
+    &_logo
+      margin-top: 3px
+
+    &_text
+      margin-top: 7px
+      display: flex
+      flex-direction: column
+      align-items: center
+      &_upper
+        font-size: 12px
+        font-weight: 500
+      &_lower
+        margin-top: 5px
+        font-size: 18px
+        font-weight: 500
+
+    &_contacts
+      display: flex
+      flex-direction: column
+      align-items: flex-end
+
+      &_phone
+        font-size: 18px
+        font-weight: 500
+        color: #ffffff
+      &_btn
+        margin-top: 8px
+        width: 150px
+        height: 30px
+        border: none
+        border-radius: 5px
+        background-color: $color-red
+        color: #ffffff
+        font-size: 12px
+        font-weight: 500
+        text-transform: uppercase
+        cursor: pointer
+        outline: none
+
+  &_wrapper
+    display: flex
+    flex-direction: column
+    align-items: flex-end
+
+  &_title
+    margin: 110px 0 0 0
+    font-size: 42px
+    font-weight: 700
+    text-transform: uppercase
+  &_subtitle
+    margin: 15px 0 0 0
+    font-size: 24px
+    font-weight: 300
+    text-transform: uppercase
+
+  &_features
+    margin-top: 75px
+    width: 425px
+    display: flex
+    justify-content: space-between
+    &_item
+      width: 110px
+      text-align: center
+      &_text
+        margin-top: 15px
+        font-size: 14px
+        font-weight: 500
+
+  &_btn
+    margin-top: 95px
+    width: 300px
+    height: 50px
+    border: none
+    border-radius: 5px
+    background-color: $color-red
+    color: #ffffff
+    font-size: 16px
+    font-weight: 500
+    text-transform: uppercase
+
+  &_catalog_link
+    margin-top: 18px
+    font-size: 16px
+    font-weight: 500
+    a
+      color: #ffffff
+
