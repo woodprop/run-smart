@@ -19,6 +19,18 @@ document.querySelector('.slider_next_btn').addEventListener('click', function ()
     slider.goTo('next')
 });
 
+
+// ------------ CATALOG TABS SWITCH ------------
+$('ul.catalog_tabs_wrapper').on('click', 'li:not(.catalog_tab_active)', function () {
+    $(this)
+        .addClass('catalog_tab_active')
+        .siblings().removeClass('catalog_tab_active')
+        .closest('div.container').find('div.catalog_items_wrapper')
+        .removeClass('catalog_active')
+        .eq($(this).index()).addClass('catalog_active');
+});
+
+
 // ------------ CATALOG ITEM SWITCH ------------
 function switchDetails(item) {
     $(item).each(function (i) {
