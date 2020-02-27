@@ -256,6 +256,11 @@ html
     height: 440px
     border: 2px solid #e8e8e8
     text-align: center
+    hr
+      border: none
+      height: 1px
+      color: #e8e8e8
+      background-color: #e8e8e8
 
     &_data
       display: none
@@ -331,3 +336,43 @@ html
       @include button
       width: 131px
       height: 40px
+
+.reviews
+  padding: 50px 0 70px 0
+  hr
+    border: none
+    height: 1px
+    color: #f6f6f6
+    background-color: #f6f6f6
+  &_title
+    font-size: 30px
+    font-weight: 400
+    text-transform: uppercase
+    text-align: center
+  &_wrapper
+    margin-top: 20px
+    display: flex
+    flex-direction: column
+  &_item
+    margin: 50px 0
+    display: flex
+    &_img
+      display: block
+      width: 169px
+      height: 169px
+    &_text
+      margin-left: 60px
+      h3
+        font-size: 18px
+        font-weight: 700
+      span
+        display: block
+        margin-top: 10px
+        color: #646464
+        font-size: 14px
+        font-weight: 300
+      p
+        margin-top: 19px
+        max-width: 650px
+        font-size: 16px
+        font-weight: 500
