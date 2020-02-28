@@ -1,3 +1,4 @@
+let mailer = 1;
 // ------------ SLIDER ------------
 
 const slider = tns({
@@ -101,4 +102,28 @@ function validateForm(form) {
 validateForm('.consultation .contact_form');
 validateForm('.modal_window_consultation .contact_form');
 validateForm('.modal_window_order .contact_form');
+
+
+// ------------ SEND MAIL ------------
+
+function sendMail(selector) {
+    let formValidator = $(selector).validate();
+    $(selector).submit(function (form) {
+        form.preventDefault();
+        if (formValidator.form()) {
+            // AJAX requesr here
+            $(this).find('input').val('');
+            $('.modal_window').hide();
+            $('.contact_form').trigger('reset');
+            if (selector.indexOf('modal') == -1) {
+                $('.modal').css('display', 'flex').hide().fadeIn();
+            }
+            $('.modal_window_success').fadeIn();
+        }
+    })
+}
+
+sendMail('.consultation .contact_form');
+sendMail('.modal_window_consultation .contact_form');
+sendMail('.modal_window_order .contact_form');
 
