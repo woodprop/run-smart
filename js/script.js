@@ -1,4 +1,5 @@
 // ------------ SLIDER ------------
+
 const slider = tns({
     container: '.slider_viewport',
     items: 1,
@@ -21,6 +22,7 @@ document.querySelector('.slider_next_btn').addEventListener('click', function ()
 
 
 // ------------ CATALOG TABS SWITCH ------------
+
 $('ul.catalog_tabs_wrapper').on('click', 'li:not(.catalog_tab_active)', function () {
     $(this)
         .addClass('catalog_tab_active')
@@ -32,6 +34,7 @@ $('ul.catalog_tabs_wrapper').on('click', 'li:not(.catalog_tab_active)', function
 
 
 // ------------ CATALOG ITEM SWITCH ------------
+
 function switchDetails(item) {
     $(item).each(function (i) {
         $(this).on('click', function (link) {
@@ -65,3 +68,32 @@ $('.modal_window_close-btn').on('click', function () {
     $('.modal_window').fadeOut();
     $('.modal').fadeOut();
 });
+
+
+// ------------ FORM VALIDATION ------------
+
+function validateForm(form) {
+    $(form).validate({
+        rules: {
+            name: 'required',
+            phone: 'required',
+            email: {
+                required: true,
+                email: true
+            }
+        },
+        messages: {
+            name: "Введите имя",
+            phone: "Введите телефон",
+            email: {
+                required: "Введите e-mail",
+                email: "Адрес должен быть формата: name@domain.ru"
+            }
+        }
+    });
+}
+
+validateForm('.consultation .contact_form');
+validateForm('.modal_window_consultation .contact_form');
+validateForm('.modal_window_order .contact_form');
+
