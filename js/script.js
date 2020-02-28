@@ -70,6 +70,11 @@ $('.modal_window_close-btn').on('click', function () {
 });
 
 
+// ------------ FORM PHONE MASK ------------
+
+$('input[name=phone]').mask("+7 (999) 999-9999");
+
+
 // ------------ FORM VALIDATION ------------
 
 function validateForm(form) {
