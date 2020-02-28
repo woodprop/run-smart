@@ -45,3 +45,23 @@ function switchDetails(item) {
 switchDetails('.catalog_item_data');
 switchDetails('.catalog_item_details');
 
+
+// ------------ MODAL WINDOWS ------------
+
+$('[data-modal=consultation]').on('click', function () {
+    $('.modal').css('display', 'flex').hide().fadeIn();
+    $('.modal_window_consultation').fadeIn();
+});
+
+$('.catalog_item_btn').each(function (i) {
+    $(this).on('click', function () {
+        $('.modal').css('display', 'flex').hide().fadeIn();
+        $('.modal_window_order').fadeIn();
+        $('.modal_window_order .modal_window_subtitle').text($('.catalog_item_title').eq(i).text());
+    })
+});
+
+$('.modal_window_close-btn').on('click', function () {
+    $('.modal_window').fadeOut();
+    $('.modal').fadeOut();
+});
