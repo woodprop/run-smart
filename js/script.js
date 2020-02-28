@@ -127,3 +127,21 @@ sendMail('.consultation .contact_form');
 sendMail('.modal_window_consultation .contact_form');
 sendMail('.modal_window_order .contact_form');
 
+
+// ------------ PAGE UP BUTTON ------------
+
+$(document).scroll(function () {
+    if ($(this).scrollTop() > 1000) {
+        $('.go-top-button').fadeIn();
+    } else
+        $('.go-top-button').fadeOut();
+});
+
+
+// ------------ SOFT SCROLL ------------
+
+$("a[href^='#']").click(function(){
+    const _href = $(this).attr("href");
+    $("html, body").animate({scrollTop: $(_href).offset().top+"px"});
+    return false;
+});
